@@ -9,12 +9,11 @@
 //    <div class="tab">topic here</div>
 
 const newTab = document.querySelector('.topics');
-const displayAll = document.querySelector('.tabs');
+
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(response => {
   console.log(response);
   newTab.appendChild(newtabCreator(response.data));
-//   displayAll.
   })
 .catch(error => {
   console.log("The data was not returned", error);
@@ -34,6 +33,16 @@ return tab;
 
 }
 
+//display tabs stretch goal
+
+// const displayAllTabs = document.querySelector('.topics');
+// function displayAll(data){
+//     const allTabs = document.createElement('div');
+
+// allTabs.classList.add('allTabs');
+// allTabs.textContent = data.topics
+
+// return allTabs;
+// }
 
 
-// tabs.textContent = data.topics
