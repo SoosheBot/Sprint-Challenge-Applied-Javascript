@@ -25,7 +25,7 @@ function cardCreator(data){
     const headline = document.createElement('div');
     const author = document.createElement('div');
     const imgContainer = document.createElement('div');
-    const imgLink = document.createElement('a');      
+    const imgLink = document.createElement('img');      
     const authorName = document.createElement('span');
 
 
@@ -40,11 +40,10 @@ imgLink.classList.add('imgLink');
 
 // //text content
 headline.textContent = data.headline;  
-author.textContent = `Name: ${data.name}`;
+author.textContent = data.name;
     //under author
 imgContainertextContent = 'Author: '; 
-imgLink.href =  data.authorPhoto;
-imgLink.textContent = data.authorPhoto;
+imgLink.src =  data.authorPhoto;
 authorName.textContent =`By: ${data.authorName}`;
 
 
@@ -53,7 +52,7 @@ card.appendChild(headline);
 card.appendChild(author);
     //under author
 author.appendChild(imgContainer);
-author.appendChild(imgLink);
+imgContainer.appendChild(imgLink);
 author.appendChild(authorName);
 
 return card;
